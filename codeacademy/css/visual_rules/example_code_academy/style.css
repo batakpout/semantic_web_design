@@ -1,0 +1,52 @@
+img {
+    height: 50px;
+    opacity: 0.5;
+}
+/*
+If the background image is still filling only half of the page, it may be due to the height of the <body> element not being set to cover the full viewport height. By default, the <body> element might not stretch to fill the entire height of the viewport.
+
+To ensure that the background image covers the entire page, you can set the height of both the <html> and <body> elements to 100%
+*/
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: tomato;
+    background-image: url("https://cdn.pixabay.com/photo/2017/09/08/17/05/elephant-2729413_640.jpg");
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    /*
+    due to the default behavior of the background-repeat property in CSS. By default, background images will repeat both horizontally and vertically if the image is smaller than the container (in this case, the <body> element)
+    */
+    background-size: cover; /* Scales the image to cover the entire body */
+}
+
+h1 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+main {
+    text-align: right;
+}
+
+a {
+    color: tomato;
+}
+
+nav {
+    /* 
+    So nav has a selectors inside. If we apply opacity to nav, this also applies them
+    to the child inside of it i.e a selectors which we don't want So,
+    rgba(0,0,0,0.5); a is alpha value i.e opacity, applies this to the parent i.e nav
+    only which being applied to it child i.e a selectors. cool!
+    background-color: black;
+    opacity: 0.5; 
+    */ 
+  background-color: rgba(0,0,0,0.4);
+}

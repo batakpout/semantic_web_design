@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Challenge</title>
+  <style>
+  body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Sign Up Form</h2>
+
+    <!-- Text input fields with placeholders -->
+    <div class="form-field">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name">
+    </div>
+
+    <div class="form-field">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email">
+    </div>
+
+    <div class="form-field">
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments" placeholder="Your comments here..."></textarea>
+    </div>
+
+    <div class="form-field">
+      <label>Gender:</label>
+      <div class="radio-group">
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+      </div>
+      <div class="radio-group">
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label> Contact Method:</label>
+      <div class="radio-group">
+        <input type="radio" id="email_contact" name="contact_method" value="email">
+        <label for="email_contact">Email</label>
+      </div>
+      <div class="radio-group">
+        <input type="radio" id="phone_contact" name="contact_method" value="phone">
+        <label for="phone_contact">Phone</label>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <label>Subscription:</label>
+      <div class="radio-group">
+        <input type="checkbox" id="newsletter" name="subscription" value="newsletter">
+        <label for="newsletter">Newsletter</label>
+      </div>
+      <div class="radio-group">
+        <input type="checkbox" id="updates" name="subscription" value="updates">
+        <label for="updates">Product Updates</label>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <button type="submit">Submit</button>
+    </div>
+  </div>
+
+</body>
+</html>

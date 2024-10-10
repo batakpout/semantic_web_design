@@ -1,0 +1,22 @@
+body {
+  font-size: 100%;
+}
+table {
+  border-collapse: separate;
+  border: 1px solid red;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 1.5em;
+}
+th, td {
+  border: 1px solid green;
+  width: 33%;
+}
+td {
+  text-align: center;
+}
+tfoot p,
+caption {
+  font-size: 0.7em;
+}
+

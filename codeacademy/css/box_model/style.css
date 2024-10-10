@@ -1,0 +1,241 @@
+/**
+The box model comprises a set of properties used to create space around and between HTML elements
+
+Important: When you set the width and height properties of an element with CSS, you just set the width and height of the content area. To calculate the total width and height of an element, you must also include the padding and borders.
+
+Example
+This <div> element will have a total width of 350px and a total height of 80px: 
+
+div {
+  width: 320px;
+  height: 50px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+}
+Here is the calculation:
+
+  320px (width of content area)
++ 20px (left padding + right padding)
++ 10px (left border + right border)
+= 350px (total width)
+
+  50px (height of content area)
++ 20px (top padding + bottom padding)
++ 10px (top border + bottom border)
+= 80px (total height)
+The total width of an element should be calculated like this:
+
+Total element width = width + left padding + right padding + left border + right border
+
+The total height of an element should be calculated like this:
+
+Total element height = height + top padding + bottom padding + top border + bottom border
+
+Note: The margin property also affects the total space that the box will take up on the page, but the margin is not included in the actual size of the box. The box's total width and height stops at the border.
+
+the four values 6px 11px 4px 9px correspond to the amount of padding on each side, in a clockwise rotation. In order, it specifies the padding-top value (6px), the padding-right value (11px), the padding-bottom value (4px), and the padding-left value (9px) of the content.
+
+p.content-header {
+  padding: 5px 10px 20px;
+}
+
+If the left and right sides of the content can be equal, the padding shorthand property allows for 3 values to be specified. The first value sets the padding-top value (5px), the second value sets the padding-left and padding-right values (10px), and the third value sets the padding-bottom value (20px).
+
+p.content-header {
+  padding: 5px 10px;
+}
+
+And finally, if the top and bottom sides can be equal, and the left and right sides can be equal, you can specify 2 values. The first value sets the padding-top and padding-bottom values (5px), and the second value sets the padding-left and padding-right values (10px).
+
+same applies for the case of margin as well.
+
+----regarding margin-------
+
+div.headline {
+  width: 400px;
+  margin: 0 auto;
+}
+
+In the example above, margin: 0 auto; will center the divs in their containing elements. The 0 sets the top and bottom margins to 0 pixels. The auto value instructs the browser to adjust the left and right margins until the element is centered within its containing element.
+
+In order to center an element, a width must be set for that element. Otherwise, the width of the div will be automatically set to the full width of its containing element, like the <body>, for example. It’s not possible to center an element that takes up the full width of the page, since the width of the page can change due to display and/or browser window size.
+
+In the example above, the width of the div is set to 400 pixels, which is less than the width of most screens. This will cause the div to center within a containing element that is greater than 400 pixels wide.
+---
+top and bottom margins, also called vertical margins, collapse, while top and bottom padding i.e horizontal margins does not.
+
+Horizontal margins (left and right), like padding, are always displayed and added together. For example, if two divs with ids #img-one and #img-two, are next to each other, they will be as far apart as the sum of their adjacent margins.
+
+#img-one {
+  margin-right: 20px;
+}
+
+#img-two {
+  margin-left: 20px;
+}
+
+In this example, the space between the #img-one and #img-two borders is 40 pixels. The right margin of #img-one (20px) and the left margin of #img-two (20px) add to make a total margin of 40 pixels.
+
+Unlike horizontal margins, vertical margins do not add. Instead, the larger of the two vertical margins sets the distance between adjacent elements.
+
+#img-one {
+  margin-bottom: 30px;
+}
+
+#img-two {
+  margin-top: 20px;
+}
+
+In this example, the vertical margin between the #img-one and #img-two elements is 30 pixels. Although the sum of the margins is 50 pixels, the margin collapses so the spacing is only dependent on the #img-one bottom margin.
+
+
+---max w and h
+Because a web page can be viewed through displays of differing screen size, the content on the web page can suffer from those changes in size. To avoid this problem, CSS offers two properties that can limit how narrow or how wide an element’s box can be sized to:
+
+min-width/height this property ensures a minimum width/height of an element’s box.
+max-width/height this property ensures a maximum width/height of an element’s box.
+
+What will happen to the contents of an element’s box if the max-height property is set too low? It’s possible for the content to spill outside of the box, resulting in content that is not legible
+----How can we ensure that we can view all of an element that is larger than its parent’s containing area?-----
+
+The overflow property controls what happens to content that spills, or overflows, outside its box. The most commonly used values are:
+
+hidden—when set to this value, any content that overflows will be hidden from view.
+scroll—when set to this value, a scrollbar will be added to the element’s box so that the rest of the content can be viewed by scrolling.
+visible—when set to this value, the overflow content will be displayed outside of the containing element. Note, this is the default value.
+
+The overflow property is set on a parent element to instruct a web browser on how to render child elements. For example, if a div’s overflow property is set to scroll, all children of this div will display overflowing content with a scroll bar.
+----
+All major web browsers have a default stylesheet they use in the absence of an external stylesheet. These default stylesheets are known as user agent stylesheets. In this case, the term user agent is a technical term for the browser.
+
+User agent stylesheets often have default CSS rules that set default values for padding and margin. This affects how the browser displays HTML elements, which can make it difficult for a developer to design or style a web page.
+
+Many developers choose to reset these default values so that they can truly work with a clean slate.
+
+* {
+  margin: 0; for settting 0 no need of unit
+  padding: 0;
+}
+or body {with above  values}
+--
+ What’s the difference between display: none and visibility: hidden? An element with display: none will be completely removed from the web page. An element with visibility: hidden, however, will not be visible on the web page, but the space reserved for it will.
+*/
+body {
+  background-color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.navigation ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.navigation li {
+  font-weight: 100;
+  letter-spacing: 2px;
+  padding: 20px;
+}
+
+.navigation  li.logo {
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+#banner {
+  background-image: url("https://content.codecademy.com/courses/web-101/unit-6/htmlcss1-img_tahoe.jpeg");
+  background-size: cover;
+  background-position: bottom center;
+  height: 700px;
+  width: 100%;
+}
+
+#banner .content h1 {
+  border: 3px solid white;
+  position: relative;
+  top: 50px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+#main {
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  width: 400px;
+  height: 1000px;
+  overflow: scroll;
+}
+
+h1 {
+  color: white;
+  font-size: 42px;
+  font-weight: 600;
+  text-align: center;
+}
+
+h2 {
+  border: 1px dotted red;
+  color: red;
+  font-size: 14px;
+  line-height: 48px;
+  padding: 20px 30px;
+  margin: 30px 20px;
+  text-align: center;
+}
+
+h3 {
+  color: red;
+  font-size: 26px;
+  font-weight: 700;
+  padding: 20px 10px;
+}
+
+p {
+  color: grey;
+  font-size: 16px;
+  line-height: 48px;
+  margin-top: 60px;
+  padding: 10px 20px;
+}
+
+.pull-quote {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.byline {
+  border-bottom: 1px solid LightGrey;
+  border-top: 1px solid LightGrey;
+  color: DarkGrey;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.share {
+  border: 1px solid LightGrey;
+  padding: 40px 0px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.share a {
+  background: red;
+  border: 1px solid red;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  margin: 10px;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.share a:hover {
+  background: white;
+  border: 1px solid red;
+  color: red;
+}
